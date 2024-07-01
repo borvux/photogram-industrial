@@ -19,8 +19,8 @@
 #  fk_rails_...  (photo_id => photos.id)
 #
 class Like < ApplicationRecord
-  validates :user_id, uniqueness: { scope: :photo_id, message: "has already liked this photo" }
-  
+  #validates :user_id, uniqueness: { scope: :photo_id, message: "has already liked this photo" }
+
   belongs_to :fan, class_name: "User", counter_cache: true
   belongs_to :photo, counter_cache: true
   has_many :likes, foreign_key: :fan_id
