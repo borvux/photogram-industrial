@@ -3,10 +3,12 @@ Rails.application.routes.draw do
 
   devise_for :users  
 
-  get "/:username" => "users#show", as: :user
-
   resources :likes
   resources :follow_requests
   resources :comments
   resources :photos
+
+  get ":username/liked" => "users#liked", as: :liked
+
+  get "/:username" => "users#show", as: :user
 end
