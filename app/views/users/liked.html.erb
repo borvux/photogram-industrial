@@ -1,7 +1,7 @@
-<!-- app/views/users/show.html.erb -->
+<!-- app/views/users/liked.html.erb -->
 
 <%= render partial: "users/navbar" %>
 
-<% @user.own_photos.each do |photo| %>
+<% @user.liked_photos.each do |photo| %>
   <%= render "photos/photo", photo: photo %>
 <% end %>
