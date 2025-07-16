@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 # rails g devise user username name avatar_image bio website private:boolean likes_count:integer comments_count:integer
+
 class DeviseCreateUsers < ActiveRecord::Migration[8.0]
   def change
     create_table :users do |t|
