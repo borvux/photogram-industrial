@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get ":username" => "users#show", as: :user
   get ":username/liked" => "users#liked", as: :liked
   get ":username/discover" => "users#discover", as: :discover
+  get ":username/feed" => "users#feed", as: :feed
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
