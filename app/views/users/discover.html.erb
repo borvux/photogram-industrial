@@ -1,9 +1,14 @@
-<div class="row">
-  <div class="col-md-8 offset-md-2">
-    <h1>Discover Photos</h1>
+<div class="row mb-4">
+  <div class="col-md-6 offset-md-3">
+    <h1 class="display-4">
+      hotdiscover
+
+    </h1>
+    
+    <p class="lead text-muted">posts liked by people you follow</p>
   </div>
 </div>
 
-<% @user.discover.each do |photo| %>
+<% @user.discover.latest.each do |photo| %>
   <%= render "photos/photo", photo: photo %>
 <% end %>
