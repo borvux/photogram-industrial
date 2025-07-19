@@ -22,6 +22,7 @@ class LikesController < ApplicationController
   # POST /likes or /likes.json
   def create
     @like = Like.new(like_params)
+    @like.fan = current_user
 
     respond_to do |format|
       if @like.save
@@ -65,6 +66,7 @@ class LikesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def like_params
-      params.expect(like: [ :fan_id, :photo_id ])
+      # only permit photo_id from the form since passing fan_id through current_user
+      params.require(:like).permit(:photo_id)
     end
 end
