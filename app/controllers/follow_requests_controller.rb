@@ -22,7 +22,7 @@ class FollowRequestsController < ApplicationController
   # POST /follow_requests or /follow_requests.json
   def create
     @follow_request = FollowRequest.new(follow_request_params)
-    @follow_request.sender = current_user 
+    @follow_request.sender = current_user
 
     respond_to do |format|
       if @follow_request.save
@@ -59,14 +59,15 @@ class FollowRequestsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_follow_request
-      @follow_request = FollowRequest.find(params.expect(:id))
-    end
 
-    # Only allow a list of trusted parameters through.
-    def follow_request_params
-      # sender_id not needed anymore since we are doing `@follow_request.sender = current_user` in create 
-      params.expect(follow_request: [ :recipient_id, :status ])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_follow_request
+    @follow_request = FollowRequest.find(params.expect(:id))
+  end
+
+  # Only allow a list of trusted parameters through.
+  def follow_request_params
+    # sender_id not needed anymore since we are doing `@follow_request.sender = current_user` in create
+    params.expect(follow_request: [:recipient_id, :status])
+  end
 end

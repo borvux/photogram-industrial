@@ -17,7 +17,7 @@
             <%= flash[:alert] %>
           </div>
         <% end %>
-        
+
         <% was_validated = resource.errors.any? %>
 
         <% form_html_options = { novalidate: true, class: "mb-3" } %>
@@ -156,7 +156,7 @@
             <% end %>
           </div>
           <!-- Devise Input for name end -->
-          
+
           <!-- Devise Input for avatar_image start -->
           <div class="form-group">
             <% avatar_image_was_invalid = resource.errors.include?(:avatar_image) %>
@@ -184,7 +184,7 @@
             <% end %>
           </div>
           <!-- Devise Input for avatar_image end -->
-          
+
           <!-- Devise Input for bio start -->
           <div class="form-group">
             <% bio_was_invalid = resource.errors.include?(:bio) %>
@@ -212,7 +212,7 @@
             <% end %>
           </div>
           <!-- Devise Input for bio end -->
-          
+
           <!-- Devise Input for private start -->
           <div class="form-group">
             <% private_was_invalid = resource.errors.include?(:private) %>
@@ -241,7 +241,6 @@
             <% end %>
           </div>
           <!-- Devise Input for private end -->
-
 
           <!-- Devise Input for website start -->
           <div class="form-group">

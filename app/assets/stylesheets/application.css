@@ -9,7 +9,7 @@
  * Consider organizing styles into separate files for maintainability.
  */
 
- .img-cover {
+.img-cover {
   object-fit: cover;
   object-position: center;
 }
