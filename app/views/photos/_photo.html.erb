@@ -32,7 +32,7 @@
         <% photo.comments.default_order.each do |comment| %>
           <%= render "comments/comment", comment: comment %>
         <% end %>
-        
+
         <%= render "comments/form", comment: photo.comments.build %>
       </ul>
     </div>
