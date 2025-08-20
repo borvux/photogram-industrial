@@ -66,6 +66,6 @@ class PhotosController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def photo_params
-      params.expect(photo: [:image, :comments_count, :likes_count, :caption, :owner_id])
+      params.expect(photo: [ :image, :comments_count, :likes_count, :caption, :owner_id ])
     end
 end

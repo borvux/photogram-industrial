@@ -67,6 +67,6 @@ class FollowRequestsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def follow_request_params
       # sender_id not needed anymore since we are doing `@follow_request.sender = current_user` in create
-      params.expect(follow_request: [:recipient_id, :status])
+      params.expect(follow_request: [ :recipient_id, :status ])
     end
 end
