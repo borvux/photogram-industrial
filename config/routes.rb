@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   root "users#feed"
-
+  
   devise_for :users
-
+  
   resources :comments
   resources :follow_requests
   resources :likes

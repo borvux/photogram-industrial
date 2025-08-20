@@ -59,15 +59,14 @@ class LikesController < ApplicationController
   end
 
   private
+    # Use callbacks to share common setup or constraints between actions.
+    def set_like
+      @like = Like.find(params.expect(:id))
+    end
 
-  # Use callbacks to share common setup or constraints between actions.
-  def set_like
-    @like = Like.find(params.expect(:id))
-  end
-
-  # Only allow a list of trusted parameters through.
-  def like_params
-    # only permit photo_id from the form since passing fan_id through current_user
-    params.require(:like).permit(:photo_id)
-  end
+    # Only allow a list of trusted parameters through.
+    def like_params
+      # only permit photo_id from the form since passing fan_id through current_user
+      params.require(:like).permit(:photo_id)
+    end
 end

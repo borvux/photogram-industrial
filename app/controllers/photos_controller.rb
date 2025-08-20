@@ -59,14 +59,13 @@ class PhotosController < ApplicationController
   end
 
   private
+    # Use callbacks to share common setup or constraints between actions.
+    def set_photo
+      @photo = Photo.find(params.expect(:id))
+    end
 
-  # Use callbacks to share common setup or constraints between actions.
-  def set_photo
-    @photo = Photo.find(params.expect(:id))
-  end
-
-  # Only allow a list of trusted parameters through.
-  def photo_params
-    params.expect(photo: [:image, :comments_count, :likes_count, :caption, :owner_id])
-  end
+    # Only allow a list of trusted parameters through.
+    def photo_params
+      params.expect(photo: [:image, :comments_count, :likes_count, :caption, :owner_id])
+    end
 end
